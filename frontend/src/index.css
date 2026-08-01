@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Paper & ink -- an editor's desk, not a marketing gradient */
+  --color-paper: #efead9;
+  --color-paper-card: #f6f2e4;
+  --color-ink: #22291f;
+  --color-ink-soft: #565f4d;
+  --color-line: #c9bfa0;
+
+  /* Stamp colors -- map directly to Approve / Needs Adjustment / Reject */
+  --color-approve: #2f6e4f;
+  --color-approve-soft: #e3ede6;
+  --color-adjust: #b8791e;
+  --color-adjust-soft: #f3e7d3;
+  --color-reject: #a8341f;
+  --color-reject-soft: #f1dfd9;
+
+  --color-accent: #2b4c4a;
+  --color-accent-soft: #dde7e5;
+
+  --font-display: "Special Elite", "Courier New", monospace;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(34, 41, 31, 0.06) 1px,
+    transparent 0
+  );
+  background-size: 22px 22px;
+}
+
+/* Lined-paper texture for the review textarea, like a manuscript page */
+.lined-paper {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 30px,
+    var(--color-line) 31px
+  );
+  background-attachment: local;
+}
+
+@keyframes stamp-hit {
+  0% {
+    opacity: 0;
+    transform: scale(1.9) rotate(var(--stamp-rotate, -6deg));
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.92) rotate(var(--stamp-rotate, -6deg));
+  }
+  80% {
+    transform: scale(1.04) rotate(var(--stamp-rotate, -6deg));
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(var(--stamp-rotate, -6deg));
+  }
+}
+
+.stamp-animate {
+  animation: stamp-hit 420ms cubic-bezier(0.2, 0.8, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stamp-animate {
+    animation: none;
+  }
+}
