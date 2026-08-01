@@ -33,7 +33,7 @@ export default function ReviewForm({ onSubmit, isSubmitting }) {
 
       <textarea
         id="review-text"
-        className="lined-paper w-full min-h-[220px] resize-y bg-transparent outline-none font-body text-base leading-[31px] text-ink placeholder:text-ink-soft/60"
+        className="lined-paper w-full min-h-55 resize-y bg-transparent outline-none font-body text-base leading-7.75 text-ink placeholder:text-ink-soft/60"
         placeholder="Write the review to submit for moderation..."
         value={reviewText}
         onChange={(event) => setReviewText(event.target.value)}
@@ -43,7 +43,7 @@ export default function ReviewForm({ onSubmit, isSubmitting }) {
 
       <div className="mt-4 flex items-center justify-between gap-4">
         <p
-          className="font-mono text-xs text-reject min-h-[1rem]"
+          className="font-mono text-xs text-reject min-h-4"
           role="alert"
         >
           {showEmptyError ? "A review can't be empty." : ""}

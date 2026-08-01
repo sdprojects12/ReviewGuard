@@ -11,7 +11,7 @@ import DecisionStamp from "./DecisionStamp";
  */
 export default function ResultCard({ status, errorMessage, result }) {
   return (
-    <div className="bg-paper-card border border-line rounded-sm shadow-[4px_4px_0_0_var(--color-line)] p-6 md:p-8 min-h-[320px] flex flex-col">
+    <div className="bg-paper-card border border-line rounded-sm shadow-[4px_4px_0_0_var(--color-line)] p-6 md:p-8 min-h-80 flex flex-col">
       <p className="font-mono text-xs uppercase tracking-widest text-ink-soft mb-3">
         Editor's desk
       </p>
